@@ -1,0 +1,85 @@
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory="C:\Users\Lab User\Desktop\my_first_hps-fpga\fpga-rtl" --output-directory="C:\Users\Lab User\Desktop\my_first_hps-fpga\fpga-rtl\soc_system\synthesis" --file-set=QUARTUS_SYNTH --report-file="html:C:\Users\Lab User\Desktop\my_first_hps-fpga\fpga-rtl\soc_system\soc_system.html" --report-file="sopcinfo:C:\Users\Lab User\Desktop\my_first_hps-fpga\fpga-rtl\soc_system.sopcinfo" --report-file="cmp:C:\Users\Lab User\Desktop\my_first_hps-fpga\fpga-rtl\soc_system\soc_system.cmp" --report-file="qip:C:\Users\Lab User\Desktop\my_first_hps-fpga\fpga-rtl\soc_system\synthesis\soc_system.qip" --report-file="svd:C:\Users\Lab User\Desktop\my_first_hps-fpga\fpga-rtl\soc_system\synthesis\soc_system.svd" --report-file="regmap:C:\Users\Lab User\Desktop\my_first_hps-fpga\fpga-rtl\soc_system\synthesis\soc_system.regmap" --report-file="xml:C:\Users\Lab User\Desktop\my_first_hps-fpga\fpga-rtl\soc_system\soc_system.xml" --report-file="debuginfo:C:\Users\Lab User\Desktop\my_first_hps-fpga\fpga-rtl\soc_system\synthesis\soc_system.debuginfo" --system-info=DEVICE_FAMILY="Cyclone V" --system-info=DEVICE=5CSEMA5F31C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file="C:\Users\Lab User\Desktop\my_first_hps-fpga\fpga-rtl\soc_system.qsys" --remove-qsys-generate-warning --language=VERILOG
+Progress: Loading fpga-rtl/soc_system.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 14.1]
+Progress: Parameterizing module clk_0
+Progress: Adding hps_0 [altera_hps 14.1]
+Progress: Parameterizing module hps_0
+Progress: Adding pio_led [altera_avalon_pio 14.1]
+Progress: Parameterizing module pio_led
+Progress: Adding pio_sw [altera_avalon_pio 14.1]
+Progress: Parameterizing module pio_sw
+Progress: Adding pio_vga_addr [altera_avalon_pio 14.1]
+Progress: Parameterizing module pio_vga_addr
+Progress: Adding pio_vga_data [altera_avalon_pio 14.1]
+Progress: Parameterizing module pio_vga_data
+Progress: Adding pio_vga_we [altera_avalon_pio 14.1]
+Progress: Parameterizing module pio_vga_we
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: soc_system.hps_0: HPS Main PLL counter settings: n = 0  m = 73
+Info: soc_system.hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Warning: soc_system.hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: soc_system.hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
+Warning: soc_system.hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Info: soc_system.pio_sw: PIO inputs are not hardwired in test bench. Undefined values will be read from PIO inputs during simulation.
+Info: soc_system: Generating soc_system "soc_system" for QUARTUS_SYNTH
+Warning: hps_0.f2h_irq0: Cannot connect clock for irq_mapper.sender
+Warning: hps_0.f2h_irq0: Cannot connect reset for irq_mapper.sender
+Warning: hps_0.f2h_irq1: Cannot connect clock for irq_mapper_001.sender
+Warning: hps_0.f2h_irq1: Cannot connect reset for irq_mapper_001.sender
+Info: hps_0: "Running  for module: hps_0"
+Info: hps_0: HPS Main PLL counter settings: n = 0  m = 73
+Info: hps_0: HPS peripherial PLL counter settings: n = 0  m = 39
+Warning: hps_0: "Configuration/HPS-to-FPGA user 0 clock frequency" (desired_cfg_clk_mhz) requested 100.0 MHz, but only achieved 97.368421 MHz
+Warning: hps_0: "QSPI clock frequency" (desired_qspi_clk_mhz) requested 400.0 MHz, but only achieved 370.0 MHz
+Warning: hps_0: 1 or more output clock frequencies cannot be achieved precisely, consider revising desired output clock frequencies.
+Info: hps_0: "soc_system" instantiated altera_hps "hps_0"
+Info: pio_led: Starting RTL generation for module 'soc_system_pio_led'
+Info: pio_led:   Generation command is [exec C:/altera/14.1/quartus/bin64/perl/bin/perl.exe -I C:/altera/14.1/quartus/bin64/perl/lib -I C:/altera/14.1/quartus/sopc_builder/bin/europa -I C:/altera/14.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.1/quartus/sopc_builder/bin -I C:/altera/14.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/14.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/14.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_pio_led --dir=C:/Users/LABUSE~1/AppData/Local/Temp/alt6629_859447682894739256.dir/0001_pio_led_gen/ --quartus_dir=C:/altera/14.1/quartus --verilog --config=C:/Users/LABUSE~1/AppData/Local/Temp/alt6629_859447682894739256.dir/0001_pio_led_gen//soc_system_pio_led_component_configuration.pl  --do_build_sim=0  ]
+Info: pio_led: Done RTL generation for module 'soc_system_pio_led'
+Info: pio_led: "soc_system" instantiated altera_avalon_pio "pio_led"
+Info: pio_sw: Starting RTL generation for module 'soc_system_pio_sw'
+Info: pio_sw:   Generation command is [exec C:/altera/14.1/quartus/bin64/perl/bin/perl.exe -I C:/altera/14.1/quartus/bin64/perl/lib -I C:/altera/14.1/quartus/sopc_builder/bin/europa -I C:/altera/14.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.1/quartus/sopc_builder/bin -I C:/altera/14.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/14.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/14.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_pio_sw --dir=C:/Users/LABUSE~1/AppData/Local/Temp/alt6629_859447682894739256.dir/0002_pio_sw_gen/ --quartus_dir=C:/altera/14.1/quartus --verilog --config=C:/Users/LABUSE~1/AppData/Local/Temp/alt6629_859447682894739256.dir/0002_pio_sw_gen//soc_system_pio_sw_component_configuration.pl  --do_build_sim=0  ]
+Info: pio_sw: Done RTL generation for module 'soc_system_pio_sw'
+Info: pio_sw: "soc_system" instantiated altera_avalon_pio "pio_sw"
+Info: pio_vga_addr: Starting RTL generation for module 'soc_system_pio_vga_addr'
+Info: pio_vga_addr:   Generation command is [exec C:/altera/14.1/quartus/bin64/perl/bin/perl.exe -I C:/altera/14.1/quartus/bin64/perl/lib -I C:/altera/14.1/quartus/sopc_builder/bin/europa -I C:/altera/14.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.1/quartus/sopc_builder/bin -I C:/altera/14.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/14.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/14.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_pio_vga_addr --dir=C:/Users/LABUSE~1/AppData/Local/Temp/alt6629_859447682894739256.dir/0003_pio_vga_addr_gen/ --quartus_dir=C:/altera/14.1/quartus --verilog --config=C:/Users/LABUSE~1/AppData/Local/Temp/alt6629_859447682894739256.dir/0003_pio_vga_addr_gen//soc_system_pio_vga_addr_component_configuration.pl  --do_build_sim=0  ]
+Info: pio_vga_addr: Done RTL generation for module 'soc_system_pio_vga_addr'
+Info: pio_vga_addr: "soc_system" instantiated altera_avalon_pio "pio_vga_addr"
+Info: pio_vga_data: Starting RTL generation for module 'soc_system_pio_vga_data'
+Info: pio_vga_data:   Generation command is [exec C:/altera/14.1/quartus/bin64/perl/bin/perl.exe -I C:/altera/14.1/quartus/bin64/perl/lib -I C:/altera/14.1/quartus/sopc_builder/bin/europa -I C:/altera/14.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.1/quartus/sopc_builder/bin -I C:/altera/14.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/14.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/14.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_pio_vga_data --dir=C:/Users/LABUSE~1/AppData/Local/Temp/alt6629_859447682894739256.dir/0004_pio_vga_data_gen/ --quartus_dir=C:/altera/14.1/quartus --verilog --config=C:/Users/LABUSE~1/AppData/Local/Temp/alt6629_859447682894739256.dir/0004_pio_vga_data_gen//soc_system_pio_vga_data_component_configuration.pl  --do_build_sim=0  ]
+Info: pio_vga_data: Done RTL generation for module 'soc_system_pio_vga_data'
+Info: pio_vga_data: "soc_system" instantiated altera_avalon_pio "pio_vga_data"
+Info: pio_vga_we: Starting RTL generation for module 'soc_system_pio_vga_we'
+Info: pio_vga_we:   Generation command is [exec C:/altera/14.1/quartus/bin64/perl/bin/perl.exe -I C:/altera/14.1/quartus/bin64/perl/lib -I C:/altera/14.1/quartus/sopc_builder/bin/europa -I C:/altera/14.1/quartus/sopc_builder/bin/perl_lib -I C:/altera/14.1/quartus/sopc_builder/bin -I C:/altera/14.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/altera/14.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/altera/14.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=soc_system_pio_vga_we --dir=C:/Users/LABUSE~1/AppData/Local/Temp/alt6629_859447682894739256.dir/0005_pio_vga_we_gen/ --quartus_dir=C:/altera/14.1/quartus --verilog --config=C:/Users/LABUSE~1/AppData/Local/Temp/alt6629_859447682894739256.dir/0005_pio_vga_we_gen//soc_system_pio_vga_we_component_configuration.pl  --do_build_sim=0  ]
+Info: pio_vga_we: Done RTL generation for module 'soc_system_pio_vga_we'
+Info: pio_vga_we: "soc_system" instantiated altera_avalon_pio "pio_vga_we"
+Info: mm_interconnect_0: "soc_system" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: irq_mapper: "soc_system" instantiated altera_irq_mapper "irq_mapper"
+Info: rst_controller: "soc_system" instantiated altera_reset_controller "rst_controller"
+Info: fpga_interfaces: "hps_0" instantiated altera_interface_generator "fpga_interfaces"
+Info: hps_io: "hps_0" instantiated altera_hps_io "hps_io"
+Info: pio_led_s1_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "pio_led_s1_translator"
+Info: hps_0_h2f_lw_axi_master_agent: "mm_interconnect_0" instantiated altera_merlin_axi_master_ni "hps_0_h2f_lw_axi_master_agent"
+Info: pio_led_s1_agent: "mm_interconnect_0" instantiated altera_merlin_slave_agent "pio_led_s1_agent"
+Info: pio_led_s1_agent_rsp_fifo: "mm_interconnect_0" instantiated altera_avalon_sc_fifo "pio_led_s1_agent_rsp_fifo"
+Info: router: "mm_interconnect_0" instantiated altera_merlin_router "router"
+Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_002"
+Info: hps_0_h2f_lw_axi_master_wr_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "hps_0_h2f_lw_axi_master_wr_limiter"
+Info: Reusing file C:/Users/Lab User/Desktop/my_first_hps-fpga/fpga-rtl/soc_system/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: pio_led_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "pio_led_s1_burst_adapter"
+Info: Reusing file C:/Users/Lab User/Desktop/my_first_hps-fpga/fpga-rtl/soc_system/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/Users/Lab User/Desktop/my_first_hps-fpga/fpga-rtl/soc_system/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
+Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
+Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
+Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
+Info: Reusing file C:/Users/Lab User/Desktop/my_first_hps-fpga/fpga-rtl/soc_system/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: border: "hps_io" instantiated altera_interface_generator "border"
+Info: soc_system: Done "soc_system" with 25 modules, 80 files
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

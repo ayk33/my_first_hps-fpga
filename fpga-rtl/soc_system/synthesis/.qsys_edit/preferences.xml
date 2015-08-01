@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="47" />
+   <irq preferredWidth="34" />
+   <export preferredWidth="274" />
+  </columns>
+ </systemtable>
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="235" />
+   <clocksource preferredWidth="235" />
+   <frequency preferredWidth="220" />
+  </columns>
+ </clocktable>
+ <window width="1936" height="1066" x="428" y="386" />
+ <library
+   expandedCategories="Project,Library/DSP/Video and Image Processing,Library/Basic Functions/On Chip Memory,Library/Processors and Peripherals,Library,Library/Memory Interfaces and Controllers/SDRAM,Library/Memory Interfaces and Controllers,Library/University Program/Memory,Library/University Program,Library/Processors and Peripherals/Inter-Process Communication,Library/University Program/Clock,Library/DSP,Library/Memory Interfaces and Controllers/Memory Interfaces with UniPHY,Library/Basic Functions" />
+ <hdlexample language="VERILOG" />
+ <generation block_symbol_file="0" />
+</preferences>
