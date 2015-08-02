@@ -78,8 +78,7 @@ module soc_system (
 	pio_vga_addr_external_connection_export,
 	pio_vga_data_external_connection_export,
 	pio_vga_we_external_connection_export,
-	reset_reset_n,
-	pio_mem_rdy_external_connection_export);	
+	reset_reset_n);	
 
 	input		clk_clk;
 	output		hps_0_h2f_reset_reset_n;
@@ -160,5 +159,4 @@ module soc_system (
 	output	[7:0]	pio_vga_data_external_connection_export;
 	output		pio_vga_we_external_connection_export;
 	input		reset_reset_n;
-	input		pio_mem_rdy_external_connection_export;
 endmodule

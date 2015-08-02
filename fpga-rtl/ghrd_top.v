@@ -210,14 +210,12 @@ module ghrd_top(
 	reg		  vga_we;
 	reg 		  vga_ctrl_clk;
 
-// vga wires coming in/out of soc system
+// vga wires coming out of soc system
 	//outputs
 	wire [18:0] vga_hps_addr;
 	wire 		   vga_hps_we;
 	wire [7:0]	vga_hps_data;
 	
-	//inputs
-	reg 		  vga_mem_rdy; 
 	
 // Memory bits
 	reg  [7:0]	disp_bits;
@@ -240,13 +238,14 @@ module ghrd_top(
 	reg [1:0]  state; 
 
 
-  assign LEDR[1:0] = state; 
 //VGA Module instantiation
+	 //Reset delay to automatically reset the PLL after a short time
     Reset_Delay			reset_delay_0(	
 			 .iCLK									   (CLOCK_50),
 			 .oRESET										(d_reset)	
 			 );
-
+	
+	 //PLL for the vga creates two clocks of 25.2 and one of them is out of phase 
     VGA_PLL          vga_pll_0 (
 						   .refclk  			      (CLOCK_50),   //  refclk.clk
 						   .rst      					(~d_reset),      //   reset.reset
@@ -254,6 +253,7 @@ module ghrd_top(
 						   .outclk_1 					(VGA_CLK)  // outclk1.clk
     );
 	 
+	 //VGA Frame made up of m10k blocks 8'bit data (8 bit color)
 	 VGA_Buffer vga_buffer_0(
 		.address_a 										(vga_addr) , 
 		.address_b 										({cord_X[9:0],cord_Y[8:0]}), // vga current address
@@ -268,6 +268,7 @@ module ghrd_top(
 	 
 
 
+	//test to get various outputs on the led's
 	/*assign LEDR = ({SW[1],SW[0]}==2'b00) ? vga_addr[9:0] : ({SW[1],SW[0]}==2'b01) 
 													 ? {1'b0,vga_addr[18:10]} : ({SW[1],SW[0]}==2'b10) 
 													 ? vga_we : ({SW[1],SW[0]}==2'b11) 
@@ -309,7 +310,6 @@ assign  mVGA_B = {disp_bits[1:0],6'b0};
 always @ (negedge vga_ctrl_clk)
 begin
 	// register the m10k output for better timing on VGA
-	// negedge seems to work better than posedge
 	disp_bits <= mem_bits;
 end
 
@@ -325,9 +325,9 @@ begin
 	end
 	else 
 	begin
-			vga_addr 	<= vga_hps_addr; 
-			vga_we   	<= vga_hps_we; 
-			vga_data 	<= vga_hps_data; 	
+		vga_addr 	<= vga_hps_addr; 
+		vga_we   	<= vga_hps_we; 
+		vga_data 	<= vga_hps_data; 	
 	end
 
 		
@@ -336,17 +336,15 @@ end // always @ (posedge VGA_CTRL_CLK)
 
 
     soc_system soc_system_0 (
-		  .clk_clk                               (CLOCK_50),                               //                            clk.clk
-        .reset_reset_n                         (hps_fpga_reset_n),                         //                          reset.reset_n
+		  .clk_clk                               (CLOCK_50),                       // clk.clk
+        .reset_reset_n                         (hps_fpga_reset_n),               // reset.reset_n
 
 	 
-        //.pio_led_external_connection_export    (LEDR),     								// pio_led_external_connection.export
-	 	  //.pio_sw_external_connection_export     (SW),      								// pio_sw_external_connection.export
-		  
-		  .pio_vga_addr_external_connection_export  (vga_hps_addr),  //  pio_vga_addr_external_connection.export
-        .pio_vga_we_external_connection_export    (vga_hps_we),    //    pio_vga_we_external_connection.export
-		  .pio_vga_data_external_connection_export  (vga_hps_data),    //    pio_vga_we_external_connection.export
-		  .pio_mem_rdy_external_connection_export   (vga_mem_rdy),    //    pio_vga_we_external_connection.export
+        .pio_led_external_connection_export    (LEDR),     								// pio_led_external_connection.export
+	 	  .pio_sw_external_connection_export     (SW),      								// pio_sw_external_connection.export
+		  .pio_vga_addr_external_connection_export  (vga_hps_addr),                // pio_vga_addr_external_connection.export
+        .pio_vga_we_external_connection_export    (vga_hps_we),      			   // pio_vga_we_external_connection.export
+		  .pio_vga_data_external_connection_export  (vga_hps_data),   					// pio_vga_we_external_connection.export
 
         .memory_mem_a                          ( HPS_DDR3_ADDR),                 // memory.mem_a
         .memory_mem_ba                         ( HPS_DDR3_BA),                   // .mem_ba

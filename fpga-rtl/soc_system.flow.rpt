@@ -1,5 +1,5 @@
 Flow report for soc_system
-Sat Aug 01 15:46:04 2015
+Sun Aug 02 12:04:52 2015
 Quartus II 64-Bit Version 14.1.0 Build 186 12/03/2014 SJ Full Version
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat Aug 01 15:44:50 2015       ;
+; Flow Status                     ; Successful - Sun Aug 02 12:03:38 2015       ;
 ; Quartus II 64-Bit Version       ; 14.1.0 Build 186 12/03/2014 SJ Full Version ;
 ; Revision Name                   ; soc_system                                  ;
 ; Top-level Entity Name           ; ghrd_top                                    ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 963 / 32,070 ( 3 % )                        ;
-; Total registers                 ; 1342                                        ;
+; Logic utilization (in ALMs)     ; 935 / 32,070 ( 3 % )                        ;
+; Total registers                 ; 1298                                        ;
 ; Total pins                      ; 368 / 457 ( 81 % )                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 2,457,600 / 4,065,280 ( 60 % )              ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/01/2015 15:37:17 ;
+; Start date & time ; 08/02/2015 11:54:58 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; soc_system          ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +---------------------------------------+--------------------------------------------------------------------------+---------------+--------------------------------+------------+
 ; Assignment Name                       ; Value                                                                    ; Default Value ; Entity Name                    ; Section Id ;
 +---------------------------------------+--------------------------------------------------------------------------+---------------+--------------------------------+------------+
-; COMPILER_SIGNATURE_ID                 ; 132129493634771.143845782903632                                          ; --            ; --                             ; --         ;
+; COMPILER_SIGNATURE_ID                 ; 132129493634771.143853088901340                                          ; --            ; --                             ; --         ;
 ; ECO_REGENERATE_REPORT                 ; On                                                                       ; Off           ; --                             ; --         ;
 ; HPS_ISW_FILE                          ; soc_system/synthesis/submodules/sequencer/alt_types.pre.h                ; --            ; soc_system_hps_0_hps_io_border ; --         ;
 ; HPS_ISW_FILE                          ; soc_system/synthesis/submodules/sequencer/emif.pre.xml                   ; --            ; soc_system_hps_0_hps_io_border ; --         ;
@@ -98,7 +98,7 @@ agreement for further details.
 ; MAX_CORE_JUNCTION_TEMP                ; 85                                                                       ; --            ; --                             ; --         ;
 ; MIN_CORE_JUNCTION_TEMP                ; 0                                                                        ; --            ; --                             ; --         ;
 ; MISC_FILE                             ; soc_system/synthesis/../soc_system.cmp                                   ; --            ; --                             ; --         ;
-; MISC_FILE                             ; soc_system/synthesis/C                                                   ; --            ; --                             ; --         ;
+; MISC_FILE                             ; soc_system/synthesis/../../C                                             ; --            ; --                             ; --         ;
 ; MISC_FILE                             ; soc_system/synthesis/soc_system_hps_0_hps.svd                            ; --            ; --                             ; --         ;
 ; MISC_FILE                             ; soc_system/synthesis/../../soc_system.qsys                               ; --            ; --                             ; --         ;
 ; MISC_FILE                             ; soc_system/synthesis/submodules/sequencer/alt_types.pre.h                ; --            ; --                             ; --         ;
@@ -123,7 +123,7 @@ agreement for further details.
 ; POWER_PRESET_COOLING_SOLUTION         ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                    ; --            ; --                             ; --         ;
 ; SLD_FILE                              ; soc_system/synthesis/soc_system.regmap                                   ; --            ; --                             ; --         ;
 ; SLD_FILE                              ; soc_system/synthesis/soc_system.debuginfo                                ; --            ; --                             ; --         ;
-; SLD_INFO                              ; QSYS_NAME soc_system HAS_SOPCINFO 1 GENERATION_ID 1436799819             ; --            ; --                             ; --         ;
+; SLD_INFO                              ; QSYS_NAME soc_system HAS_SOPCINFO 1 GENERATION_ID 1438530521             ; --            ; --                             ; --         ;
 ; SOPCINFO_FILE                         ; soc_system/synthesis/../../soc_system.sopcinfo                           ; --            ; --                             ; --         ;
 ; SPD_FILE                              ; VGA_PLL.spd                                                              ; --            ; --                             ; --         ;
 ; SYNTHESIS_ONLY_QIP                    ; On                                                                       ; --            ; --                             ; --         ;
@@ -138,11 +138,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:42     ; 1.1                     ; 941 MB              ; 00:01:00                           ;
-; Fitter                    ; 00:03:13     ; 1.7                     ; 3256 MB             ; 00:05:07                           ;
-; Assembler                 ; 00:00:29     ; 1.0                     ; 797 MB              ; 00:00:23                           ;
-; TimeQuest Timing Analyzer ; 00:01:09     ; 2.1                     ; 1604 MB             ; 00:01:24                           ;
-; Total                     ; 00:05:33     ; --                      ; --                  ; 00:07:54                           ;
+; Analysis & Synthesis      ; 00:00:47     ; 1.1                     ; 960 MB              ; 00:01:01                           ;
+; Fitter                    ; 00:04:13     ; 1.5                     ; 3242 MB             ; 00:05:13                           ;
+; Assembler                 ; 00:00:32     ; 1.0                     ; 808 MB              ; 00:00:25                           ;
+; TimeQuest Timing Analyzer ; 00:01:10     ; 2.1                     ; 1603 MB             ; 00:01:23                           ;
+; Total                     ; 00:06:42     ; --                      ; --                  ; 00:08:02                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

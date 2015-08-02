@@ -75,27 +75,6 @@
          type = "String";
       }
    }
-   element pio_mem_rdy
-   {
-      datum _sortIndex
-      {
-         value = "7";
-         type = "int";
-      }
-   }
-   element pio_mem_rdy.s1
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "96";
-         type = "String";
-      }
-   }
    element pio_sw
    {
       datum _sortIndex
@@ -216,11 +195,6 @@
  <interface
    name="pio_led_external_connection"
    internal="pio_led.external_connection"
-   type="conduit"
-   dir="end" />
- <interface
-   name="pio_mem_rdy_external_connection"
-   internal="pio_mem_rdy.external_connection"
    type="conduit"
    dir="end" />
  <interface
@@ -789,24 +763,6 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="10" />
  </module>
- <module
-   name="pio_mem_rdy"
-   kind="altera_avalon_pio"
-   version="14.1"
-   enabled="1">
-  <parameter name="bitClearingEdgeCapReg" value="false" />
-  <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
-  <parameter name="direction" value="Input" />
-  <parameter name="edgeType" value="RISING" />
-  <parameter name="generateIRQ" value="false" />
-  <parameter name="irqType" value="LEVEL" />
-  <parameter name="resetValue" value="0" />
-  <parameter name="simDoTestBenchWiring" value="false" />
-  <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="1" />
- </module>
  <module name="pio_sw" kind="altera_avalon_pio" version="14.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
@@ -916,21 +872,11 @@
   <parameter name="baseAddress" value="0x0050" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection
-   kind="avalon"
-   version="14.1"
-   start="hps_0.h2f_lw_axi_master"
-   end="pio_mem_rdy.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0060" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
  <connection kind="clock" version="14.1" start="clk_0.clk" end="pio_led.clk" />
  <connection kind="clock" version="14.1" start="clk_0.clk" end="pio_sw.clk" />
  <connection kind="clock" version="14.1" start="clk_0.clk" end="pio_vga_addr.clk" />
  <connection kind="clock" version="14.1" start="clk_0.clk" end="pio_vga_data.clk" />
  <connection kind="clock" version="14.1" start="clk_0.clk" end="pio_vga_we.clk" />
- <connection kind="clock" version="14.1" start="clk_0.clk" end="pio_mem_rdy.clk" />
  <connection
    kind="clock"
    version="14.1"
@@ -971,11 +917,6 @@
    version="14.1"
    start="clk_0.clk_reset"
    end="pio_vga_we.reset" />
- <connection
-   kind="reset"
-   version="14.1"
-   start="clk_0.clk_reset"
-   end="pio_mem_rdy.reset" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
 </system>

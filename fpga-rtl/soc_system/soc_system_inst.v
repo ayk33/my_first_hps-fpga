@@ -77,7 +77,6 @@
 		.pio_vga_addr_external_connection_export (<connected-to-pio_vga_addr_external_connection_export>), // pio_vga_addr_external_connection.export
 		.pio_vga_data_external_connection_export (<connected-to-pio_vga_data_external_connection_export>), // pio_vga_data_external_connection.export
 		.pio_vga_we_external_connection_export   (<connected-to-pio_vga_we_external_connection_export>),   //   pio_vga_we_external_connection.export
-		.reset_reset_n                           (<connected-to-reset_reset_n>),                           //                            reset.reset_n
-		.pio_mem_rdy_external_connection_export  (<connected-to-pio_mem_rdy_external_connection_export>)   //  pio_mem_rdy_external_connection.export
+		.reset_reset_n                           (<connected-to-reset_reset_n>)                            //                            reset.reset_n
 	);
 
