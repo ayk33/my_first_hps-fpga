@@ -10,6 +10,7 @@
 #include "socal/alt_gpio.h"
 #include "../inc/hps_0.h"
 
+
 #define HW_REGS_BASE ( ALT_STM_OFST )
 #define HW_REGS_SPAN ( 0x04000000 )
 #define HW_REGS_MASK ( HW_REGS_SPAN - 1 )
@@ -44,7 +45,6 @@ void VGA_draw_point(int x1, int y1, short color)
 
 }
 
-
 void VGA_clean_up()
 {
 	*(uint32_t *)h2p_lw_vga_we_addr = 0; 
@@ -55,10 +55,7 @@ int main() {
   //YOU MUST HIT RESET OF FPGA BEFORE YOU CAN ACTUALLY DRAW ANYTHING
 	void *virtual_base;
 	int fd;
-	int loop_count;
-	int led_direction;
-	int led_mask;
-	int sw_value;
+
 
 
 	// map the address space for the LED registers into user space so we can interact with them.
@@ -84,22 +81,14 @@ int main() {
 	h2p_lw_vga_we_addr   = virtual_base + ( ( unsigned long  )( ALT_LWFPGASLVS_OFST + PIO_VGA_WE_BASE ) & ( unsigned long)( HW_REGS_MASK ) );
 	h2p_lw_vga_data_addr = virtual_base + ( ( unsigned long  )( ALT_LWFPGASLVS_OFST + PIO_VGA_DATA_BASE ) & ( unsigned long)( HW_REGS_MASK ) );
 	
-
-	// toggle the LEDs a bit
-
-	loop_count = 0;
-	led_mask = 0x01;
-	sw_value = 0; 
-	led_direction = 0; // 0: left to right direction
-  
   
   //VGA_draw_point(320, 240, red);
   //VGA_draw_point(400, 100, green);
   
   //Timing variables
   clock_t begin, end;
-  double time_spent;
-  int num_iters = 150; 
+  float time_spent;
+  int num_iters = 50; 
 
   // Measure the elapsed time based on CPU time
   int i,j,k; 
@@ -108,18 +97,15 @@ int main() {
   for (k = 0; k < num_iters; k++){
       
       for (i = 0; i < 640; i++)
-       for (j = 0; j < 480; j++)
-          VGA_draw_point(i,j,black);
+       for (j = 0; j < 480; j++)      
+          VGA_draw_point(i,j,k&255);
   }        
   end = clock();
-  time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-  
-  printf("Time taken for all iterations %f(s)\n",time_spent);
-  printf("Average time taken for %d iterations was %f(s)\n", num_iters, time_spent/num_iters);
+  time_spent = (float)(end - begin);
+  printf("Time taken for all iterations Cycles: %f (cycles) Time: %0.6f(s)\n", time_spent, (time_spent/(float)CLOCKS_PER_SEC));
+  printf("Average time taken for each of the %d iterations was %f (cycles) and %0.6f(s)\n", num_iters, time_spent/num_iters, time_spent/(num_iters*(float)CLOCKS_PER_SEC));
     
-    
-
-  
+   
 
 	/*while(1){//loop_count < 60 ) {
 		
