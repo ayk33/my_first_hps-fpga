@@ -1,5 +1,5 @@
 Flow report for soc_system
-Mon Aug 03 18:54:12 2015
+Tue Aug 04 14:34:56 2015
 Quartus II 64-Bit Version 14.1.0 Build 186 12/03/2014 SJ Full Version
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon Aug 03 18:52:58 2015       ;
+; Flow Status                     ; Successful - Tue Aug 04 14:33:45 2015       ;
 ; Quartus II 64-Bit Version       ; 14.1.0 Build 186 12/03/2014 SJ Full Version ;
 ; Revision Name                   ; soc_system                                  ;
 ; Top-level Entity Name           ; ghrd_top                                    ;
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/03/2015 18:45:16 ;
+; Start date & time ; 08/04/2015 14:26:24 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; soc_system          ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ agreement for further details.
 +---------------------------------------+--------------------------------------------------------------------------+---------------+--------------------------------+------------+
 ; Assignment Name                       ; Value                                                                    ; Default Value ; Entity Name                    ; Section Id ;
 +---------------------------------------+--------------------------------------------------------------------------+---------------+--------------------------------+------------+
-; COMPILER_SIGNATURE_ID                 ; 132129493634771.143864190705472                                          ; --            ; --                             ; --         ;
+; COMPILER_SIGNATURE_ID                 ; 132129493634771.143871277506380                                          ; --            ; --                             ; --         ;
 ; ECO_REGENERATE_REPORT                 ; On                                                                       ; Off           ; --                             ; --         ;
 ; HPS_ISW_FILE                          ; soc_system/synthesis/submodules/sequencer/alt_types.pre.h                ; --            ; soc_system_hps_0_hps_io_border ; --         ;
 ; HPS_ISW_FILE                          ; soc_system/synthesis/submodules/sequencer/emif.pre.xml                   ; --            ; soc_system_hps_0_hps_io_border ; --         ;
@@ -123,7 +123,7 @@ agreement for further details.
 ; POWER_PRESET_COOLING_SOLUTION         ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                    ; --            ; --                             ; --         ;
 ; SLD_FILE                              ; soc_system/synthesis/soc_system.regmap                                   ; --            ; --                             ; --         ;
 ; SLD_FILE                              ; soc_system/synthesis/soc_system.debuginfo                                ; --            ; --                             ; --         ;
-; SLD_INFO                              ; QSYS_NAME soc_system HAS_SOPCINFO 1 GENERATION_ID 1438530521             ; --            ; --                             ; --         ;
+; SLD_INFO                              ; QSYS_NAME soc_system HAS_SOPCINFO 1 GENERATION_ID 1438712641             ; --            ; --                             ; --         ;
 ; SOPCINFO_FILE                         ; soc_system/synthesis/../../soc_system.sopcinfo                           ; --            ; --                             ; --         ;
 ; SPD_FILE                              ; VGA_PLL.spd                                                              ; --            ; --                             ; --         ;
 ; SYNTHESIS_ONLY_QIP                    ; On                                                                       ; --            ; --                             ; --         ;
@@ -138,11 +138,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:43     ; 1.1                     ; 961 MB              ; 00:01:01                           ;
-; Fitter                    ; 00:03:24     ; 1.7                     ; 3277 MB             ; 00:05:07                           ;
-; Assembler                 ; 00:00:31     ; 1.0                     ; 812 MB              ; 00:00:24                           ;
-; TimeQuest Timing Analyzer ; 00:01:10     ; 2.2                     ; 1612 MB             ; 00:01:25                           ;
-; Total                     ; 00:05:48     ; --                      ; --                  ; 00:07:57                           ;
+; Analysis & Synthesis      ; 00:00:42     ; 1.0                     ; 963 MB              ; 00:00:58                           ;
+; Fitter                    ; 00:03:14     ; 1.7                     ; 3270 MB             ; 00:05:04                           ;
+; Assembler                 ; 00:00:30     ; 1.0                     ; 796 MB              ; 00:00:23                           ;
+; TimeQuest Timing Analyzer ; 00:01:07     ; 2.2                     ; 1607 MB             ; 00:01:24                           ;
+; Total                     ; 00:05:33     ; --                      ; --                  ; 00:07:49                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
